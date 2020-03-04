@@ -40,6 +40,8 @@ countries.map(country => {
 					const text = $(el)
 						.text()
 						.replace(/\s\s+/g, ' ');
+					const link = $(el).find('');
+
 					console.log(text);
 				});
 			}
