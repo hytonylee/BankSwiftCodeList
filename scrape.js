@@ -6,9 +6,10 @@ request('https://www.bankswiftcode.org/', (error, response, html) => {
 		const $ = cheerio.load(html);
 		const distOpt = $('#content');
 
-		$('#content ul li a span').each((index, element) => {
-			const option = $(element).text();
-			console.log(option);
+		$('#content ul li a').each((index, element) => {
+			// const option = $(element).text();
+			const link = $(element).attr('href');
+			console.log(link);
 		});
 	}
 });
