@@ -36,8 +36,10 @@ countries.map(country => {
 			if (!error && response.statusCode == 200) {
 				const $ = cheerio.load(html);
 
-				$('table #t2').each((index, element) => {
-					const text = $(element).text();
+				$('table #t2').each((i, el) => {
+					const text = $(el)
+						.text()
+						.replace(/\s\s+/g, ' ');
 					console.log(text);
 				});
 			}
